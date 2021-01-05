@@ -54,7 +54,7 @@ public class Base {
 
 	public void stopAppiumServer() {
 		
-		System.out.println("Stoping Appium Server...");
+		System.out.println("Stopping Appium Server...");
 		service.stop();
 	}
 
