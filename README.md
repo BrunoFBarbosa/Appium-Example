@@ -9,19 +9,22 @@ Requires an Android emulator in order to run the tests
 # Usage
 
 ```
-mvn test
+$ cd AppiumFramework
+$ mvn test
 ```
 This will run the test app on the default emulator called "Emulator".
 
-If your emulator does not have this name, you can simply use
+If your emulator does not have this name, you can simply use the following:
 
 ```
-mvn test -DdeviceType=<your_emulator_name>
+$ mvn test -DdeviceType=<your_emulator_name>
 ```
 
-You can also edit your device on the global.properties file
+You can also edit your device on the [global.properties](https://github.com/BrunoFBarbosa/Appium-Example/blob/master/src/main/java/maventutorial/AppiumFramework/global.properties) file:
 
 ```
+...
 device = Emulator
 emulatorId = emulator-5554
+...
 ```
