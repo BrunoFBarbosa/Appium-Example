@@ -12,7 +12,7 @@ Requires an Android emulator in order to run the tests
 $ cd AppiumFramework
 $ mvn test
 ```
-This will run the test app on the default emulator called "Emulator".
+This will run both the E-Commerce and the Api Demo apps on the default emulator called "Emulator".
 
 If your emulator does not have this name, you can simply use the following:
 
