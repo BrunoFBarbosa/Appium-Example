@@ -1,7 +1,6 @@
 package maventutorial.AppiumFramework;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
@@ -11,8 +10,9 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -26,17 +26,22 @@ public class Base {
 	public static AppiumDriverLocalService service;
 	public static AndroidDriver<AndroidElement> driver;
 	
-	@BeforeClass
-	public void setupTest() throws IOException, InterruptedException {
+	@BeforeSuite
+	public void setupSuite() throws IOException, InterruptedException {
 		startAppiumServer();
 		startEmulator();
 	}
 	
-	@AfterClass
-	public void teardownTest() throws IOException, InterruptedException {
-		driver.closeApp();
+	@AfterSuite
+	public void teardownSuite() throws IOException, InterruptedException {
 		stopAppiumServer();
 		stopEmulator();
+		
+	}
+	
+	@AfterTest
+	public void teardownTest() {
+		driver.closeApp();
 		
 	}
 

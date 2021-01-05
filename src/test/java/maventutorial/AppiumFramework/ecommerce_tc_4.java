@@ -43,7 +43,7 @@ public class ecommerce_tc_4 extends Base {
 		String amount2 = checkout.productList.get(1).getText().substring(1);
 		String totalValue = checkout.totalAmount.getText().substring(1);
 		  
-		Double totalExpected = 10.0; Double.parseDouble(totalValue);
+		Double totalExpected = Double.parseDouble(totalValue);
 		Double totalActual = Double.parseDouble(amount1) + Double.parseDouble(amount2);
 		Assert.assertEquals(totalActual, totalExpected);
 
